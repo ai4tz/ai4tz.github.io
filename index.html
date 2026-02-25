@@ -8,137 +8,226 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
- <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #001f3f 0%, #0a1f44 50%, #001f3f 100%);
-    color: #ffffff;
-    text-align: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-  }
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #001f3f 0%, #0a1f44 50%, #001f3f 100%);
+      color: #ffffff;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
 
-  body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0) 70%);
-    animation: pulse-bg 8s ease-in-out infinite alternate;
-    pointer-events: none;
-  }
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0) 70%);
+      animation: pulse-bg 8s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
 
-  @keyframes pulse-bg {
-    0% { opacity: 0.5; transform: scale(1); }
-    100% { opacity: 0.8; transform: scale(1.05); }
-  }
+    @keyframes pulse-bg {
+      0% { opacity: 0.5; transform: scale(1); }
+      100% { opacity: 0.8; transform: scale(1.05); }
+    }
 
-  .container {
-    max-width: 800px;
-    padding: 60px 20px 40px; /* increased top padding to prevent logo cut-off */
-    position: relative;
-    z-index: 1;
-  }
+    .container {
+      max-width: 800px;
+      padding: 60px 20px 40px;
+      position: relative;
+      z-index: 1;
+    }
 
-  .logo {
-    width: 220px;                /* reduced from 240px for better proportion */
-    height: 220px;
-    max-width: 80%;
-    margin: 40px auto 50px;      /* top margin increased + centered */
-    object-fit: contain;         /* changed to contain so full logo shows without cropping */
-    border-radius: 50%;
-    box-shadow: 0 0 40px rgba(0, 212, 255, 0.6), 0 0 80px rgba(0, 212, 255, 0.3);
-    animation: logo-glow 2s ease-in-out infinite alternate;
-  }
+    .logo {
+      width: 220px;
+      height: 220px;
+      max-width: 80%;
+      margin: 40px auto 50px;
+      object-fit: contain;
+      border-radius: 50%;
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.6), 0 0 80px rgba(0, 212, 255, 0.3);
+      animation: logo-glow 2s ease-in-out infinite alternate;
+    }
 
-  @keyframes logo-glow {
-    0% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.2); }
-    100% { box-shadow: 0 0 50px rgba(0, 212, 255, 0.8), 0 0 100px rgba(0, 212, 255, 0.4); }
-  }
+    @keyframes logo-glow {
+      0% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.2); }
+      100% { box-shadow: 0 0 50px rgba(0, 212, 255, 0.8), 0 0 100px rgba(0, 212, 255, 0.4); }
+    }
 
-  h1 {
-    font-size: 4rem;
-    margin: 0 0 20px;
-    font-weight: 700;
-    animation: fade-in 1.5s ease-out forwards 0.3s;
-  }
+    h1 {
+      font-size: 4rem;
+      margin: 0 0 20px;
+      font-weight: 700;
+      animation: fade-in 1.5s ease-out forwards 0.3s;
+    }
 
-  p {
-    font-size: 1.4rem;
-    line-height: 1.6;
-    max-width: 600px;
-    margin: 0 auto 40px;
-    font-weight: 300;
-    animation: fade-in 1.5s ease-out forwards 0.6s;
-  }
+    p {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-weight: 300;
+      animation: fade-in 1.5s ease-out forwards 0.6s;
+    }
 
-  .social {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    animation: fade-in 1.5s ease-out forwards 0.9s;
-  }
+    .social {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fade-in 1.5s ease-out forwards 0.9s;
+    }
 
-  .social a {
-    color: #00d4ff;
-    font-size: 2.2rem;
-    margin: 0 25px;
-    text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
-    position: relative;
-  }
+    .social a {
+      color: #00d4ff;
+      font-size: 2.2rem;
+      margin: 0 25px;
+      text-decoration: none;
+      transition: transform 0.3s ease, color 0.3s ease;
+      position: relative;
+    }
 
-  .social a:hover {
-    color: #ffffff;
-    transform: scale(1.2) rotate(5deg);
-  }
+    .social a:hover {
+      color: #ffffff;
+      transform: scale(1.2) rotate(5deg);
+    }
 
-  .social a::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: #00d4ff;
-    transition: width 0.3s ease, left 0.3s ease;
-  }
+    .social a::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #00d4ff;
+      transition: width 0.3s ease, left 0.3s ease;
+    }
 
-  .social a:hover::after {
-    width: 100%;
-    left: 0;
-  }
+    .social a:hover::after {
+      width: 100%;
+      left: 0;
+    }
 
-  footer {
-    margin-top: 80px;
-    font-size: 0.9rem;
-    opacity: 0.7;
-    font-weight: 300;
-  }
+    /* Subscription Form */
+    .subscribe {
+      margin-top: 60px;
+      animation: fade-in 1.5s ease-out forwards 1.2s;
+      opacity: 0;
+      width: 100%;
+      max-width: 500px;
+    }
 
-  @keyframes fade-in {
-    0% { opacity: 0; transform: translateY(50px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-</style>
+    .subscribe label {
+      display: block;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .subscribe-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .input-group {
+      display: flex;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 50px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+    }
+
+    input[type="email"] {
+      flex: 1;
+      padding: 16px 24px;
+      font-size: 1.1rem;
+      border: none;
+      background: transparent;
+      color: white;
+      outline: none;
+    }
+
+    input[type="email"]::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    button {
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, #00d4ff, #0095ff);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+    }
+
+    .success-toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 200, 100, 0.95);
+      color: white;
+      padding: 16px 32px;
+      border-radius: 50px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      z-index: 1000;
+      font-weight: 500;
+    }
+
+    .success-toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    footer {
+      margin-top: 100px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      font-weight: 300;
+    }
+
+    @keyframes fade-in {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
+
   <div class="container">
     <img src="https://raw.githubusercontent.com/ai4tz/ai4tz.github.io/main/ai4tz_logo.png" alt="ai4tz logo" class="logo">
-   
+    
     <h1>AI for Tanzania</h1>
     <p>We are building innovative AI solutions to solve real-world challenges in Tanzania.<br>Pre-launch initiative | Coming soon!</p>
-   
+    
     <div class="social">
       <a href="https://x.com/ai4tz?s=21" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
       <a href="https://www.linkedin.com/company/ai4tz/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
@@ -147,7 +236,55 @@
       <a href="https://www.instagram.com/ai4tz_official?igsh=MXBsZ2h2c2tpazhieQ==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
       <a href="https://www.tiktok.com/@ai4tz?_r=1&_t=ZN-943YcVJzl1q" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
     </div>
+
+    <!-- Subscription Form -->
+    <div class="subscribe">
+      <label>Subscribe now to get the latest updates!</label> 
+      <form id="subscribe-form" action="https://formspree.io/f/xbdawray" method="POST">
+        <div class="input-group">
+          <input type="email" name="email" placeholder="Enter your email" required autocomplete="email">
+          <button type="submit">Notify Me</button>
+        </div>
+      </form>
+    </div>
   </div>
+
   <footer>© 2026 ai4tz</footer>
+
+  <!-- Success Toast -->
+  <div id="toast" class="success-toast">Thank you! You'll receive updates soon.</div>
+
+  <script>
+    const form = document.getElementById('subscribe-form');
+    const toast = document.getElementById('toast');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          toast.classList.add('show');
+          form.reset();
+          setTimeout(() => {
+            toast.classList.remove('show');
+          }, 4000);
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      })
+      .catch(() => {
+        alert('Network error. Please check your connection.');
+      });
+    });
+  </script>
 </body>
 </html>
