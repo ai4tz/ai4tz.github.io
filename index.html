@@ -6,201 +6,199 @@
   <title>ai4tz – AI for Tanzania</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #001f3f 0%, #0a1f44 50%, #001f3f 100%);
-    color: #ffffff;
-    text-align: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* ← pushes footer down, content fills space */
-    align-items: center;
-    overflow: hidden; /* prevents unwanted scrollbars */
-    position: relative;
-  }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #001f3f 0%, #0a1f44 50%, #001f3f 100%);
+      color: #ffffff;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      overflow-y: auto;
+      position: relative;
+    }
 
-  body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0) 70%);
-    animation: pulse-bg 8s ease-in-out infinite alternate;
-    pointer-events: none;
-  }
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0) 70%);
+      animation: pulse-bg 8s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
 
-  @keyframes pulse-bg {
-    0% { opacity: 0.5; transform: scale(1); }
-    100% { opacity: 0.8; transform: scale(1.05); }
-  }
+    @keyframes pulse-bg {
+      0% { opacity: 0.5; transform: scale(1); }
+      100% { opacity: 0.8; transform: scale(1.05); }
+    }
 
-  .container {
-    max-width: 800px;
-    padding: 40px 20px 20px; /* reduced top/bottom padding */
-    flex: 1; /* allows container to grow and fill space */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+    .container {
+      max-width: 800px;
+      padding: 100px 20px 60px; /* increased top padding to keep logo away from top edge */
+      position: relative;
+      z-index: 1;
+    }
 
-  .logo {
-    width: 180px;                /* smaller logo to save vertical space */
-    height: 180px;
-    max-width: 70%;
-    margin: 20px auto 30px;      /* tighter margins */
-    object-fit: contain;
-    border-radius: 50%;
-    box-shadow: 0 0 40px rgba(0, 212, 255, 0.6), 0 0 80px rgba(0, 212, 255, 0.3);
-    animation: logo-glow 2s ease-in-out infinite alternate;
-  }
+    .logo {
+      width: 220px;
+      height: 220px;
+      max-width: 80%;
+      margin: 40px auto 50px; /* extra top margin for safety */
+      object-fit: contain;
+      border-radius: 50%;
+      box-shadow: 0 0 40px rgba(0, 212, 255, 0.6), 0 0 80px rgba(0, 212, 255, 0.3);
+      animation: logo-glow 2s ease-in-out infinite alternate;
+    }
 
-  @keyframes logo-glow {
-    0% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.2); }
-    100% { box-shadow: 0 0 50px rgba(0, 212, 255, 0.8), 0 0 100px rgba(0, 212, 255, 0.4); }
-  }
+    @keyframes logo-glow {
+      0% { box-shadow: 0 0 30px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.2); }
+      100% { box-shadow: 0 0 50px rgba(0, 212, 255, 0.8), 0 0 100px rgba(0, 212, 255, 0.4); }
+    }
 
-  h1 {
-    font-size: 3.2rem;           /* slightly smaller for better fit */
-    margin: 0 0 16px;
-    font-weight: 700;
-  }
+    h1 {
+      font-size: 3.8rem;
+      margin: 0 0 20px;
+      font-weight: 700;
+    }
 
-  p {
-    font-size: 1.25rem;          /* tightened */
-    line-height: 1.5;
-    max-width: 580px;
-    margin: 0 auto 30px;
-    font-weight: 300;
-  }
+    p {
+      font-size: 1.35rem;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-weight: 300;
+    }
 
-  .social {
-    margin: 20px 0 30px;         /* reduced vertical space */
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;                   /* better spacing between icons */
-  }
+    .social {
+      margin: 30px 0 40px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
 
-  .social a {
-    color: #00d4ff;
-    font-size: 2rem;
-    text-decoration: none;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
+    .social a {
+      color: #00d4ff;
+      font-size: 2.2rem;
+      text-decoration: none;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
 
-  .social a:hover {
-    color: #ffffff;
-    transform: scale(1.25);
-  }
+    .social a:hover {
+      color: #ffffff;
+      transform: scale(1.2);
+    }
 
-  /* Subscription Form – moved closer to content */
-  .subscribe {
-    margin: 20px 0 40px;
-    width: 100%;
-    max-width: 480px;
-  }
+    /* Subscribe Section */
+    .subscribe {
+      margin: 40px 0 60px;
+      width: 100%;
+      max-width: 480px;
+    }
 
-  .subscribe label {
-    display: block;
-    font-size: 1.25rem;
-    margin-bottom: 12px;
-    font-weight: 500;
-  }
+    .subscribe label {
+      display: block;
+      font-size: 1.15rem; /* reduced size as requested */
+      margin-bottom: 16px;
+      font-weight: 400; /* not bold */
+      opacity: 0.95;
+    }
 
-  .subscribe-form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-  }
+    .subscribe-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
 
-  .input-group {
-    display: flex;
-    width: 100%;
-    border-radius: 50px;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 212, 255, 0.2);
-  }
+    .input-group {
+      display: flex;
+      width: 100%;
+      border-radius: 50px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 212, 255, 0.2);
+    }
 
-  input[type="email"] {
-    flex: 1;
-    padding: 14px 20px;
-    font-size: 1rem;
-    border: none;
-    background: transparent;
-    color: white;
-    outline: none;
-  }
+    input[type="email"] {
+      flex: 1;
+      padding: 16px 24px;
+      font-size: 1.05rem;
+      border: none;
+      background: transparent;
+      color: white;
+      outline: none;
+    }
 
-  input[type="email"]::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-  }
+    input[type="email"]::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
 
-  button {
-    padding: 14px 32px;
-    font-size: 1rem;
-    font-weight: 600;
-    background: linear-gradient(90deg, #00d4ff, #0095ff);
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-  }
+    button {
+      padding: 16px 36px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      background: linear-gradient(90deg, #00d4ff, #0095ff);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
 
-  button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
-  }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+    }
 
-  .success-toast {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 200, 100, 0.95);
-    color: white;
-    padding: 14px 28px;
-    border-radius: 50px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    z-index: 1000;
-    font-weight: 500;
-  }
+    .success-toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 200, 100, 0.95);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 50px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      z-index: 1000;
+      font-weight: 500;
+    }
 
-  .success-toast.show {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
+    .success-toast.show {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
 
-  footer {
-    padding: 20px 0 30px;
-    font-size: 0.85rem;
-    opacity: 0.7;
-    font-weight: 300;
-    width: 100%;
-    text-align: center;
-  }
+    footer {
+      padding: 20px 0 40px;
+      font-size: 0.85rem;
+      opacity: 0.7;
+      font-weight: 300;
+      width: 100%;
+      text-align: center;
+    }
 
-  @keyframes fade-in {
-    0% { opacity: 0; transform: translateY(30px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
-</style>
+    @keyframes fade-in {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
@@ -219,10 +217,9 @@
       <a href="https://www.tiktok.com/@ai4tz?_r=1&_t=ZN-943YcVJzl1q" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
     </div>
 
-    <!-- Subscription Form -->
     <div class="subscribe">
-      <label>Subscribe now to get the latest updates!</label> 
-      <form id="subscribe-form" action="https://formspree.io/f/xbdawray" method="POST">
+      <label>Subscribe now to get the latest updates!</label>
+      <form id="subscribe-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
         <div class="input-group">
           <input type="email" name="email" placeholder="Enter your email" required autocomplete="email">
           <button type="submit">Notify Me</button>
